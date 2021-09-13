@@ -1,12 +1,23 @@
 import React from 'react';
 import '../Styles/FeedStyles.css';
+import MessageSender from './MessageSenderComponent';
+import Post from './PostComponent';
 import StoryReel from './StoryReelComponent';
 
 function Feed() {
   return (
     <div className="feed">
       <StoryReel />
-      {/* MessageSender */}
+      <MessageSender />
+
+      <Post
+        profilePic="https://source.unsplash.com/random/660"
+        message='Wow This works!'
+        timestamp="This is a timestamp"
+        username='Bobby Keel'
+        image="https://source.unsplash.com/random/680"
+      />
+
     </div>
   )
 }
