@@ -41,7 +41,7 @@ function Header() {
       </div>
       <div className="header__right">
         <div className="header__info">
-          <Avatar src=""/>
+          <Avatar src="https://source.unsplash.com/random/660"/>
           <h4>Bobby Keel</h4>
         </div>
         <IconButton>
