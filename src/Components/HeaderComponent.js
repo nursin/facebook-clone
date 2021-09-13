@@ -42,7 +42,7 @@ function Header() {
       <div className="header__right">
         <div className="header__info">
           <Avatar src=""/>
-          <h4>Ssssanga</h4>
+          <h4>Bobby Keel</h4>
         </div>
         <IconButton>
           <AddIcon />

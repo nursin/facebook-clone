@@ -1,15 +1,17 @@
 import './App.css';
 import Header from './Components/HeaderComponent'
+import SideBar from './Components/SideBarComponent';
 
 function App() {
   return (
     //BEM naming convention
     <div className="app">
       <Header />
-      {/* App body */}
-        {/* Sidebar */}
+      <div className="app__body">
+        <SideBar />
         {/* Feed */}
         {/* Widgets */}
+      </div>
     </div>
   );
 }
