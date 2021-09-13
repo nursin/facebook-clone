@@ -15,7 +15,23 @@ function Feed() {
         message='Wow This works!'
         timestamp="This is a timestamp"
         username='Bobby Keel'
-        image="https://source.unsplash.com/random/680"
+        image="https://source.unsplash.com/random/230"
+      />
+
+      <Post
+        profilePic="https://source.unsplash.com/random/660"
+        message='Wow This works!'
+        timestamp="This is a timestamp"
+        username='Bobby Keel'
+        image="https://source.unsplash.com/random/421"
+      />
+
+      <Post
+        profilePic="https://source.unsplash.com/random/660"
+        message='Wow This works!'
+        timestamp="This is a timestamp"
+        username='Bobby Keel'
+        image="https://source.unsplash.com/random/1"
       />
 
     </div>
