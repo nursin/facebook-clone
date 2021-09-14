@@ -11,8 +11,11 @@ import ForumIcon from '@material-ui/icons/Forum';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import '../Styles/HeaderStyles.css'
+import { useStateValue } from '../Redux/StateProvider';
 
 function Header() {
+  const [{user}, dispatch] = useStateValue();
+
   return (
     <div className="header">
       <div className="header__left">
@@ -41,8 +44,8 @@ function Header() {
       </div>
       <div className="header__right">
         <div className="header__info">
-          <Avatar src="https://source.unsplash.com/random/660"/>
-          <h4>Bobby Keel</h4>
+          <Avatar src={user.photoURL}/>
+          <h4>{user.displayName}</h4>
         </div>
         <IconButton>
           <AddIcon />

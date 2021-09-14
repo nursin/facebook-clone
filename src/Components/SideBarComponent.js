@@ -7,13 +7,16 @@ import PeopleIcon from '@material-ui/icons/People';
 import ChatIcon from '@material-ui/icons/Chat';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
+import { useStateValue } from '../Redux/StateProvider';
 
 function SideBar() {
+  const [{user}, dispatch] = useStateValue();
+  
   return (
     <div className="sidebar">
       <SidebarRow
-        src="https://source.unsplash.com/random/660"
-        title="Bobby Keel"
+        src={user.photoURL}
+        title={user.displayName}
       />
       <SidebarRow
         title="Pages"
