@@ -4,15 +4,25 @@ import '../Styles/MessageSenderStyles.css';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import { useStateValue } from '../Redux/StateProvider';
+import db from '../firebase';
+import firebase from 'firebase';
 
 function MessageSender() {
   const [input, setInput] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const [{user}, dispatch] = useStateValue();
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    // clever db stuff
+    db.collection('posts').add({
+      message: input,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      profilePic: user.photoURL,
+      username: user.displayName,
+      image: imageUrl
+    })
 
     setInput('');
     setImageUrl('');
@@ -21,13 +31,13 @@ function MessageSender() {
   return (
     <div className="messageSender">
       <div className="messageSender__top">
-        <Avatar src="https://source.unsplash.com/random/660"/>
+        <Avatar src={user.photoURL}/>
         <form>
           <input
             value={input}
             onChange={e => setInput(e.target.value)}
             className="messageSender__input"
-            placeholder={`What's on your mind?`}
+            placeholder={`What's on your mind, ${user.displayName}?`}
             type="text"
           />
           <input

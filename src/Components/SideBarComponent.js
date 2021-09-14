@@ -7,16 +7,21 @@ import PeopleIcon from '@material-ui/icons/People';
 import ChatIcon from '@material-ui/icons/Chat';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
+import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 import { useStateValue } from '../Redux/StateProvider';
 
 function SideBar() {
-  const [{user}, dispatch] = useStateValue();
-  
+  const [{ user }, dispatch] = useStateValue();
+
   return (
     <div className="sidebar">
       <SidebarRow
         src={user.photoURL}
         title={user.displayName}
+      />
+      <SidebarRow
+        title="COVID-19 Information Center"
+        Icon={LocalHospitalIcon}
       />
       <SidebarRow
         title="Pages"
